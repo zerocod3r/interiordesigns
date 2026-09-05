@@ -1,0 +1,69 @@
+/*Default Fonts*/
+@font-face { 
+	font-display: fallback; 
+	font-family: "seafont-semibold"; 
+	src: url("../fonts/seafont-semibold.woff2") format("woff2");
+}
+@font-face { 
+	font-display: fallback; 
+	font-family: "seafont-medium"; 
+	src:url("../fonts/seafont-medium.woff2") format("woff2");
+}
+@font-face { 
+	font-display: fallback; 
+	font-family: "seafont-regular"; 
+	src: url("../fonts/seafont-regular.woff2") format("woff2");
+}
+@font-face { 
+	font-display: fallback; 
+	font-family: "seafont-thin"; 
+	src: url("../fonts/seafont-thin.woff2") format("woff2");
+}
+@font-face { 
+	font-display: fallback; 
+	font-family: "ux-font-1568179320663"; 
+	src: url("../fonts/seafont-regular.woff2") format("woff2");
+} 
+@font-face { 
+	font-display: fallback;
+	font-family: "ux-font-1568179357581";  
+	src:url("../fonts/seafont-semibold.woff2") format("woff2");
+}
+@font-face {
+	font-family: "ux-font-1531806071558";
+	src: url("../fonts/seafont-regular.woff2") format("woff2");
+}
+@font-face { 
+	font-display: fallback;
+	font-family: "ux-font-1531806041397";  
+	src:url("../fonts/seafont-semibold.woff2") format("woff2");
+}
+@font-face { 
+	font-display: fallback;
+	font-family: "ux-font-1629168960811";  
+	src:url("../fonts/seafont-semibold.woff2") format("woff2");
+}
+@font-face {
+	font-family: "ux-font-1629171215418";
+	src: url("../fonts/seafont-regular.woff2") format("woff2");
+}
+@font-face {
+	font-family: "ux-font-1630548862255";
+	src: url("../fonts/seafont-thin.woff2") format("woff2");
+}
+@font-face { 
+	font-display: fallback;
+	font-family: "ux-font-1637424848581";  
+	src:url("../fonts/seafont-medium.woff2") format("woff2");
+}
+/*Arnold freelancer*/
+@font-face {
+	font-display: fallback;
+	font-family: "ux-font-1648535561732";  
+	src:url("../fonts/seafont-regular.woff2") format("woff2");
+}
+@font-face {
+	font-display: fallback;
+	font-family: "ux-font-1648535592353";  
+	src:url("../fonts/seafont-semibold.woff2") format("woff2");
+}

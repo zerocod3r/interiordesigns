@@ -1,0 +1,24 @@
+/* ---------------------------------------------------------------------------
+   Horizontal-overflow guard
+
+   Two things in the page builder deliberately park boxes outside the viewport:
+   full-bleed groups cancel their inner gutter with a -10px lateral margin, and
+   text blocks marked "slide in from the right" wait off-canvas until they are
+   scrolled into view. Either one hands a page a sideways scrollbar - 10px on
+   desktop, up to 100px on a phone.
+
+   #wrap spans exactly the viewport, so clipping its horizontal axis absorbs
+   both without moving anything that should be seen: full-bleed content already
+   stops at the viewport edge. `clip` creates no scroll container, so sticky
+   gallery columns, fixed backgrounds, the lightbox and the scroll-triggered
+   entrance animations keep working; `hidden` on the root is the belt-and-braces
+   fallback for browsers that predate `clip`.
+   --------------------------------------------------------------------------- */
+html {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+#wrap {
+  overflow-x: clip;
+}
