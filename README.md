@@ -1,15 +1,39 @@
 # Kajal Designs — portfolio site
 
 A static portfolio for an interior design studio. Eight pages, no build step at
-serve time and no server-side dependency: open `index.html` or serve the folder.
+serve time and no server-side dependency.
+
+## Routes
+
+Every page is written as `<route>/index.html`, so a static host serves it at a
+clean path. Nothing in the site links to a `.html` file.
+
+    /                         Work — five project tiles on a packed grid
+    /work/<slug>/             One page per project: sticky brief + image column
+    /about/                   Contact
+    404.html                  Served by the host for anything else
+
+## Publishing to GitHub Pages
+
+Push the contents of this folder to the branch Pages is set to serve. No Jekyll
+step is involved — `.nojekyll` turns it off, so the build is copied verbatim.
+
+Links between pages are relative, so the site works from any repository name or
+a custom domain without changes. Two things do carry the deployed address, and
+both come from `SITE` in the build's `content.py`:
+
+* `404.html`, whose links have to be absolute because the host serves that page
+  for a missing URL at any depth;
+* `sitemap.xml` and the `<link rel="canonical">` on each page.
+
+If the repository is renamed, or the site moves to a custom domain, update
+`SITE["url"]` and `SITE["base"]` and rebuild. For a user site or a custom
+domain, `base` is `"/"`.
 
 ## Layout
 
-    index.html                Work — five project tiles on a packed grid
-    work/<slug>/              One page per project: sticky brief + image column
-    about/                    Contact
-    404.html
-    robots.txt
+    index.html  about/  work/<slug>/  404.html
+    robots.txt  sitemap.xml  .nojekyll
     assets/
       css/   brand.css — this studio's layer over the inherited theme CSS
       js/    site-config.js, theme.js, share.js, portfolio-2col.js, modules/, vendor/
@@ -46,17 +70,16 @@ Each render is emitted at 480 / 800 / 1200 / 1600 / 2000px and served through
 a desktop does. Tile images are cropped to 3:2 with a per-image vertical bias;
 gallery images keep their native ratio. Everything lazy-loads.
 
+## Previewing locally
+
+Open it through a server rather than `file://`, so that directory routes
+resolve:
+
+    python3 -m http.server 8000
+
 ## Regenerating
 
-The page and image build scripts are not part of the served site. They read the
-studio's renders from their own folder and write this directory:
-
-    content.py   projects, copy, running order, tile grid
-    images.py    derivative ladders and tile crops
-    chrome.py    shared head, header, menu, lightbox shell
-    pages.py     the eight page templates
-    brand.py     wordmark, favicon, brand.css
-    run.py       builds all of it
+The build scripts live beside this folder in `kajal-designs-build/`.
 
 ## To replace before launch
 

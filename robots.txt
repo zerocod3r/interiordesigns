@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://zerocod3r.github.io/interiordesigns/sitemap.xml
